@@ -1,27 +1,5 @@
 @charset "UTF-8";
-/*----------------------------------------------------------------------
 
-	MASTER STYLESHEET
-
-	Project:        Metronic "Asentus" Frontend Freebie - Responsive HTML Template Based On Twitter Bootstrap 3.3.4
-	Version:        1.0
-	Author:         KeenThemes
-	Primary use:    Corporate, Business Themes.
-	Email:			support@keenthemes.com
-	Follow: 		http://www.twitter.com/keenthemes
-	Like: 			http://www.facebook.com/keenthemes
-	Website:		http://www.keenthemes.com
-	Premium:		Premium Metronic Admin Theme: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-
------------------------------------------------------------------------*/
-/* eg: @include user-select(none); */
-/* eg: @include rotate(45deg); */
-/* eg: @include translate3d(0,0,0); */
-/* eg: @include border-radius(3px); */
-/*------------------------------------------------------------------
-  	[The "base.scss" contains basic default element styles
-  		(colors, typography, margins & padding).]
-------------------------------------------------------------------*/
 html {
   overflow-x: hidden;
 }
@@ -149,6 +127,45 @@ h4 {
   outline: none;
 }
 
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(17, 17, 17, 0.5);
+  transition: all 0.5s ease;
+  display: none;
+}
+
+.popup_open {
+  display: block;
+}
+
+.popup__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  max-width: 588px;
+  width: 100%;
+}
+
+.popup__wrapper {
+  padding: 40px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Section Seperator */
 .section-seperator {
   border-bottom: 1px solid #edf0f2;
@@ -241,7 +258,7 @@ fieldset[disabled] .btn-theme {
 .btn-white-brd {
   color: #ea0318;
   background: transparent;
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: #ea0318;
   border-width: 1px;
 }
 
@@ -284,9 +301,6 @@ fieldset[disabled] .btn-theme {
 }
 
 
-/*------------------------------------------------------------------
-  	[Promo Section]
-------------------------------------------------------------------*/
 @media (max-width: 991px) {
   .promo-section .promo-section-col {
     padding-top: 100px;
@@ -656,8 +670,9 @@ fieldset[disabled] .btn-theme {
 
 /* Media Queries below 991px */
 @media (max-width: 991px) {
-  /* Bootstrap collapse of navigation with a maximum width: 991px
-    (Change it to any breakpoint you want to be collapsed) */
+  .tel{
+    display: none;
+  }
   .header {
     background: #fff;
   }
@@ -923,23 +938,20 @@ fieldset[disabled] .btn-theme {
 }
 
 .carousel-title {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 700;
   color: #ea0318;
   line-height: 1.1;
   text-transform: uppercase;
+  width: 50%;
 }
 
 @media (max-width: 768px) {
   .carousel-title {
-    font-size: 60px;
+    font-size: 35px;
   }
 }
 
-/*----------------------------------
-  Custome Style of Info Window
-------------------------------------*/
-/* White background and box outline */
 .gm-style > div:first-child > div + div > div:last-child > div > div:first-child > div {
   background-color: #fff !important;
   box-shadow: none !important;
@@ -981,9 +993,6 @@ fieldset[disabled] .btn-theme {
   left: 22px !important;
 }
 
-/*--------------------------------------------------
-    [Masonry Grid]
-----------------------------------------------------*/
 .masonry-grid {
   position: relative;
   margin: 0 -2px;
@@ -1074,14 +1083,12 @@ fieldset[disabled] .btn-theme {
   }
 }
 
-/*------------------------------------------------------------------
-    [Swiper Slider]
-------------------------------------------------------------------*/
 .swiper-slider {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .swiper-clients-img {
@@ -1450,6 +1457,9 @@ fieldset[disabled] .btn-theme {
     [Top margin below 480px]
 ------------------------------------------------------------------*/
 @media (max-width: 480px) {
+  .tel{
+    display: none;
+  }
   .xs-margin-b-0 {
     margin-bottom: 0 !important;
   }
@@ -1491,9 +1501,6 @@ fieldset[disabled] .btn-theme {
   }
 }
 
-/*--------------------------------------------------
-    [Height]
-----------------------------------------------------*/
 .height-100 {
   height: 100px !important;
 }
@@ -1508,4 +1515,40 @@ fieldset[disabled] .btn-theme {
 
 .height-400 {
   height: 400px !important;
+}
+.tel .nav-item .nav-item-child a{
+  color: #ea0318;
+}
+
+.btn-primary{
+  margin-left: 10px;
+  background: transparent;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 0;
+}
+.btn-primary:hover{
+  color: #333;
+  background-color: #fff;
+}
+.btn-primary:focus, .btn-primary:active{
+  background-color: #ea0318;
+}{
+  background-color: #ea0318;
+}
+
+.modal-open{
+  padding-right: 0 !important;
+}
+.form-control{
+  border: 1px solid #000;
+}
+.modal-title{
+  text-align: center;
+  padding-top: 10px;
+}
+.close span{
+  font-size: 20px;
+  font-weight: 900;
+  color: #000;
 }
