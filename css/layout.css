@@ -618,7 +618,9 @@ fieldset[disabled] .btn-theme {
 }
 
 .header .nav-item:last-child .nav-item-child {
-  padding-right: 0;
+  padding: 20px 0;
+  text-align: right;
+
 }
 
 .header .nav-item .nav-item-hover.active:after {
@@ -1532,8 +1534,6 @@ fieldset[disabled] .btn-theme {
   background-color: #fff;
 }
 .btn-primary:focus, .btn-primary:active{
-  background-color: #ea0318;
-}{
   background-color: #ea0318;
 }
 
